@@ -46,16 +46,30 @@ To build an image from the `Dockerfile`:
     ```
 
 # Part 2 - GitHub Actions and DockerHub
-Follow these steps to create public repo in DockerHub:
-- Naviage to [Docker](https://hub.docker.com/signup)and enter your account information. click Sign Up
-- On the page for `Choose a Plan`, click on `Continue with Free`
+ -Follow these steps to create public repo in DockerHub:
+  - Naviage to [Docker](https://hub.docker.com/signup)and enter your account information. click Sign Up
+  - On the page for `Choose a Plan`, click on `Continue with Free`
+- To authenticate with DockerHub via CLI using Dockerhub a token:
+  - On a webbrowser, navigate to (Docker's security section)[https://hub.docker.com/settings/security] and click `New Access Token`
+  - provide a description to the token and select the `Read, Write, Delete` option. Click Generate
+  - copy the token and store it in a safe place
+  - on WSL2, type:
+    ```
+    docker login -u <your username>
+    ```
+  - At the password prompt, paste the token and then press enter  
+ - To push a container to Dockerhub:
+  - First commit the changes with the following command
+    ```
+    docker commit -m "Added LAMP Server" -a "NAME" test-lamp-server USER/test-lamp-server:latest
+
+    ```
 
 
+  -
+  -
+  -  
 
-
-
-- How to authenticate with DockerHub via CLI using Dockerhub credentials
-  - what credentials would you recommend providing?
 - How to push container image to Dockerhub (without GitHub Actions)
 - Configuring GitHub Secrets
   - How to set a secret
