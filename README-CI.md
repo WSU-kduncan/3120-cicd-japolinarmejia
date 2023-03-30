@@ -32,13 +32,18 @@ To build an image from the `Dockerfile`:
     docker images
     ```
   - The image with the name `website` should appear
-  
-
-
-
-
-  - how to run the container
-  - how to view the project running in the container (open a browser...go to IP and port...)
+  - To create a container named `my-website` and with the image `website`, type the following:
+    ```   
+    docker run -d --name my-website -p 8080:80 website
+    ```
+  - To see if the image has been succesfully created and running, type the following comman:
+    ```   
+    docker ps
+    ```
+  - To test the website, open a web browser and type:
+    ```
+    127.0.0.1:8080
+    ```
 
 # Part 2 - GitHub Actions and DockerHub
 
