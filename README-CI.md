@@ -86,15 +86,22 @@ To build an image from the `Dockerfile`:
   ```
   - Select the `GitHub account` to logon to and press `Enter`
   - Select `SSH` as the prefered protocol and press `Enter`
-  - Press and `n` to Generate a new SSH key and press `Enter`
-  - Select `Paste an authentication token` and press `Enter`
-  
+  - Press and `y` to Generate a new SSH key and press `Enter`
+  - On `How would you like to authenticate GitHub CLI?` select `login with a web browser` and press `Enter`
+  - On a web browser, navigate to (device activation)[https://github.com/login/device] and enter the one-time code then click `Continue`
+  - On the Authorization GitHub CLI page, click `Authorize github`
+  - Type the github password and click Confirm
+
+
+
+
+
   - Next, to set a secret in Github with the name docher_secret, type:
   ```
   gh secret set docker_secret
   ```
   
-  
+  -
   
   - What secret(s) are set for this project
     - Note: do not copy paste your secrets into your documentation
