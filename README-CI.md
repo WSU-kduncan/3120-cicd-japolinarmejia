@@ -46,10 +46,11 @@ To build an image from the `Dockerfile`:
     ```
 
 # Part 2 - GitHub Actions and DockerHub
- -Follow these steps to create public repo in DockerHub:
+- Follow these steps to create public repo in DockerHub:
   - Naviage to [Docker](https://hub.docker.com/signup)and enter your account information. click Sign Up
   - On the page for `Choose a Plan`, click on `Continue with Free`
 - To authenticate with DockerHub via CLI using Dockerhub a token:
+
   - On a webbrowser, navigate to (Docker's security section)[https://hub.docker.com/settings/security] and click `New Access Token`
   - provide a description to the token and select the `Read, Write, Delete` option. Click Generate
   - copy the token and store it in a safe place
@@ -57,24 +58,47 @@ To build an image from the `Dockerfile`:
     ```
     docker login -u <your username>
     ```
-  - At the password prompt, paste the token and then press enter  
- - To push a container to Dockerhub:
+  - At the password prompt, paste the token and then press enter
+
+- To push a container to Dockerhub:
   - First commit the changes with the following command
     ```
-    docker commit -m "Added LAMP Server" -a "NAME" test-lamp-server USER/test-lamp-server:latest
-
+    docker commit -m "website" -a "Juan Apolinar" my-website3 juanapolinar001/my-website3:latest
     ```
+  - Next, logon to docker using:
+    ```
+    docker login
+    ```
+  - Afte logon, use the following command to push the container to docker
+    ```
+    sudo docker push juanapolinar001/my-website3
+    ```
+  - Here is the link to the (container)[https://hub.docker.com/r/juanapolinar001/my-website3]
 
-
-  -
-  -
-  -  
-
-- How to push container image to Dockerhub (without GitHub Actions)
 - Configuring GitHub Secrets
-  - How to set a secret
+  - In order to use Github secrets, you must first install the Github CLI:
+  ```
+  sudo snap install gh
+  ```
+  - Next, authenticate on gh with the following command:
+  ```
+  gh auth login
+  ```
+  - Select the `GitHub account` to logon to and press `Enter`
+  - Select `SSH` as the prefered protocol and press `Enter`
+  - Press and `n` to Generate a new SSH key and press `Enter`
+  - Select `Paste an authentication token` and press `Enter`
+  
+  - Next, to set a secret in Github with the name docher_secret, type:
+  ```
+  gh secret set docker_secret
+  ```
+  
+  
+  
   - What secret(s) are set for this project
     - Note: do not copy paste your secrets into your documentation
+
 - Behavior of GitHub workflow
   - what does it do and when
   - what variables in workflow are custom to your project
