@@ -34,7 +34,7 @@ To build an image from the `Dockerfile`:
  - The image with the name `website` should appear
  - To create a container named `my-website` and with the image `website`, type the following:
     ```   
-    docker run -d --name my-website -p 8080:80 website
+    docker run -d --name my-website -p 80:80 website
     ```
  - To see if the image has been succesfully created and running, type the following comman:
     ```   
@@ -42,7 +42,7 @@ To build an image from the `Dockerfile`:
     ```
  - To test the website, open a web browser and type:
     ```
-    127.0.0.1:8080
+    127.0.0.1:80
     ```
 
 # Part 2 - GitHub Actions and DockerHub
