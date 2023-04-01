@@ -63,7 +63,7 @@ To build an image from the `Dockerfile`:
 - To push a container to Dockerhub:
   - First commit the changes with the following command
     ```
-    docker commit -m "website" -a "Juan Apolinar" my-website3 juanapolinar001/my-website3:latest
+    docker commit -m "website" -a "Juan Apolinar" my-website3 ${{ secrets.DOCKERHUB_USERNAME }}/my-website3:latest
     ```
   - Next, logon to docker using:
     ```
@@ -76,21 +76,19 @@ To build an image from the `Dockerfile`:
   - Here is the link to the (container)[https://hub.docker.com/r/juanapolinar001/my-website3]
 
 - Configuring GitHub Secrets
-  - In order to use Github secrets, you must first install the Github CLI:
-  ```
-  sudo snap install gh
-  ```
-  - Next, authenticate on gh with the following command:
-  ```
-  gh auth login
-  ```
-  - Select the `GitHub account` to logon to and press `Enter`
-  - Select `SSH` as the prefered protocol and press `Enter`
-  - Press and `y` to Generate a new SSH key and press `Enter`
-  - On `How would you like to authenticate GitHub CLI?` select `login with a web browser` and press `Enter`
-  - On a web browser, navigate to (device activation)[https://github.com/login/device] and enter the one-time code then click `Continue`
-  - On the Authorization GitHub CLI page, click `Authorize github`
-  - Type the github password and click Confirm
+  - To configure Github secrets, navigate to the repo and click (Settings)[https://github.com/WSU-kduncan/3120-cicd-japolinarmejia/settings]
+  - On the left pane, click `Secrets and variables` and then click `actions`
+  - To add the docker username, click `New repository secret`
+  - On the name textbox, type `DOCKERHUB_USERNAME`
+  - On the Secret textbox, type `${{ secrets.DOCKERHUB_USERNAME }}`
+  - Click `Add secret`
+  - To add the docker token, click `New repository secret`
+  - On the name textbox, type `DOCKERHUB_TOKEN`
+  - On the Secret textbox, type `${{ secrets.DOCKERHUB_TOKEN }}`
+  - Click `Add secret`
+
+
+ 
 
 
 
