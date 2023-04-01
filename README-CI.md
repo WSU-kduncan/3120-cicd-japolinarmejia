@@ -1,7 +1,12 @@
 # Part 1 - Dockerize it
 
 ## CI Project Overview
-This project's purpose is to design create a deployable docker image with an imbedded website using the Apache httpd docker image. Creating docker images for websites, and other applications, simplifies the deployment of these applications across multiple hosts in a network. This project requires the following tools:  
+The first part of the purpose of this project is to create a deployable docker image with an imbedded website using the Apache httpd docker image. Creating docker images for websites, and other applications, simplifies the deployment of these applications across multiple hosts in a network. 
+![Docker and Dockerfile](docker_dockerfile.png)
+
+The second part of this project, will guide you on how to create a free public repo in Docker Hub and to create Docker container using Git Hub for version control.
+![GitHub and Docker Hub Integration](github_docker_integration.png)
+This project requires the following tools:  
  - WSL2
  - Docker Desktop
  - GitHub Desktop
