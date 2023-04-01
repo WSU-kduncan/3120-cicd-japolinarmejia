@@ -1,49 +1,49 @@
 # Part 1 - Dockerize it
 
 ## CI Project Overview
-The first part of the purpose of this project is to create a deployable docker image with an imbedded website using the Apache httpd docker image. Creating docker images for websites, and other applications, simplifies the deployment of these applications across multiple hosts in a network. 
-- ![Docker and Dockerfile](docker_dockerfile.png)
+-The first part of the purpose of this project is to create a deployable docker image with an imbedded website using the Apache httpd docker image. Creating docker images for websites, and other applications, simplifies the deployment of these applications across multiple hosts in a network. 
+  - ![Docker and Dockerfile](docker_dockerfile.png)
 
-The second part of this project, will guide you on how to create a free public repo in Docker Hub and to create Docker container using Git Hub for version control.
-- ![GitHub and Docker Hub Integration](github_docker_integration.png)
-This project requires the following tools:  
- - WSL2
- - Docker Desktop
- - GitHub Desktop
- - Docker Hub free account
+-The second part of this project, will guide you on how to create a free public repo in Docker Hub and to create Docker container using Git Hub for version control.
+  - ![GitHub and Docker Hub Integration](github_docker_integration.png)
+- This project requires the following tools:  
+  - WSL2
+  - Docker Desktop
+  - GitHub Desktop
+  - Docker Hub free account
 
-If performing this lab in a local Windows Machine, follow these steps:
- - Open the Microsoft Store and search for WSL2 and click Install on Ubuntu 22.04.2 LTS. wait until WSL2 is fully installed before continuing to the following step.
- - After installing WSL2, browse to the [Docker website](https://docs.docker.com/desktop/install/windows-install/) and install Docker by clicking on `Desktop for Windows`. reboot the system when the installation is complete.
- - Proceed to install GitHub Desktop and link it to the repo for this project
+- If performing this lab in a local Windows Machine, follow these steps:
+  - Open the Microsoft Store and search for WSL2 and click Install on Ubuntu 22.04.2 LTS. wait until WSL2 is fully installed before continuing to the following step.
+  - After installing WSL2, browse to the [Docker website](https://docs.docker.com/desktop/install/windows-install/) and install Docker by clicking on `Desktop for Windows`. reboot the system when the installation is complete.
+  - Proceed to install GitHub Desktop and link it to the repo for this project
 
-To build an image from the `Dockerfile`: 
- - Create the Dockerfile in the same folder for the GitHub repo.
- - Add the following to the Dockerfile:
+- To build an image from the `Dockerfile`: 
+  - Create the Dockerfile in the same folder for the GitHub repo.
+  - Add the following to the Dockerfile:
     ```  
     FROM httpd:2.4
 
     COPY ./website/ /usr/local/apache2/htdocs/
     ```
- - Save the Dockerfile
- - To create the docker image that is named `website` and that it also uses the Dockerfile, run the following command:
+  - Save the Dockerfile
+  - To create the docker image that is named `website` and that it also uses the Dockerfile, run the following command:
     ```  
     docker build -t my-apache2 .
     ```
- - To ensure that the image has been created, type the following:
+  - To ensure that the image has been created, type the following:
     ```  
     docker images
     ```
- - The image with the name `website` should appear
- - To create a container named `my-website` and with the image `website`, type the following:
+  - The image with the name `website` should appear
+  - To create a container named `my-website` and with the image `website`, type the following:
     ```   
     docker run -d --name my-website -p 80:80 website
     ```
- - To see if the image has been successfully created and running, type the following command:
+  - To see if the image has been successfully created and running, type the following command:
     ```   
     docker ps
     ```
- - To test the website, open a web browser and type:
+  - To test the website, open a web browser and type:
     ```
     127.0.0.1:80
     ```
@@ -98,8 +98,3 @@ To build an image from the `Dockerfile`:
     - branches: if using multiple branches, type the name of the branch that will be linked to this workflow
     - runs-on: Select the Operating System that is required for the container 
     - jobs: steps: with: tags: ${{ secrets.DOCKERHUB_USERNAME }}/: Select the name of the docker container and the version number that will be assigned to the new container
-  
-# Part 3 - GitHub Actions and Docker Hub
-
-Include a diagram (or diagrams) of the continuous integration process.  A good diagram will label tools used and how things connect.  This diagram would probably look best near your project description.
-
