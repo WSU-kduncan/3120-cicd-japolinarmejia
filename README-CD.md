@@ -1,7 +1,7 @@
 # Part 1 - Semantic Versioning
 
 ## CD Project Overview
-- The first part of the of this project is to add semantic versioning to project 4 and to geenrate 
+- The first part of the of this project is to add semantic versioning to project 4 and to generate 
 
 
 
