@@ -34,5 +34,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: 
+            ${{ steps.meta.outputs.tags }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/my-website3:${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
