@@ -26,6 +26,8 @@ jobs:
           images: |
             ${{ secrets.DOCKERHUB_USERNAME }}/my-website3
           tags: |
+            type=ref,event=branch
+            type=ref,event=pr
             type=semver,pattern={{version}}
       -
         name: Set up QEMU
