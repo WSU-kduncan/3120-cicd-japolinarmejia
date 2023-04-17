@@ -1,7 +1,7 @@
-# Part 1 - Semantic Versioning
-
-## CD Project Overview
+# CD Project Overview
 - The first part of this project is to add semantic versioning to project 4 plus the automatization of using webhooks and a script that could pull a new image from Dockerhub. the tools to be used are Ubuntu in AWS, GitHub, Docker Hub and adnanh's webhook.
+
+## Part 1 - Semantic Versioning
 
 - This workflow will be activated when a cahnge is pushed to GitHub with the tag 'vX.X.X'. this will update gitHub and also create a new Docker image with the version 'v.X.X.X' and it will also update the image with the tag 'latest'.
 
@@ -66,20 +66,52 @@
 - If everything worked properlly, the new Docker image will be posted in [Docker Hub](https://hub.docker.com/r/juanapolinar001/my-website3/tags). 
 
 
+## Part 2 - Deployment
+- The first step is to install Docker Hub in the AWS instance.
+	- To isntall Docker in Ubuntu, first update and upgrade the Ubuntu repositories by typing:
+	'''
+	sudo apt-get update && sudo apt-get upgrade -y
+	'''
+	
+	- Next, ty pe the command to install Docker as:
+	'''
+	sudo apt install docker
+	'''
+
+	- To check if Docker is running, type:
+	'''
+	sudo systemctl status docker
+	'''
 
 
- a deployable docker image with an imbedded website using the Apache httpd docker image. Creating docker images for websites, and other applications, simplifies the deployment of these applications across multiple hosts in a network. 
-  - ![Docker and Dockerfile](docker_dockerfile.png)
 
-- The second part of this project, will guide you on how to create a free public repo in Docker Hub and to create Docker container using Git Hub for version control.
-  - ![GitHub and Docker Hub Integration](github_docker_integration.png)
-- This project requires the following tools:  
-  - WSL2
-  - Docker Desktop
-  - GitHub Desktop
-  - Docker Hub free account
 
-- If performing this lab in a local Windows Machine, follow these steps:
-  - Open the Microsoft Store and search for WSL2 and click Install on Ubuntu 22.04.2 LTS. wait until WSL2 is fully installed before continuing to the following step.
-  - After installing WSL2, browse to the [Docker website](https://docs.docker.com/desktop/install/windows-install/) and install Docker by clicking on `Desktop for Windows`. reboot the system when the installation is complete.
-  - Proceed to install GitHub Desktop and link it to the repo for this project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
