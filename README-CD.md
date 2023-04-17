@@ -1,6 +1,7 @@
 # CD Project Overview
 - The first part of this project is to add semantic versioning to project 4 plus the automatization of using webhooks and a script that could pull a new image from Dockerhub. the tools to be used are Ubuntu in AWS, GitHub, Docker Hub and adnanh's webhook.
 
+
 ## Part 1 - Semantic Versioning
 
 - This workflow will be activated when a cahnge is pushed to GitHub with the tag 'vX.X.X'. this will update gitHub and also create a new Docker image with the version 'v.X.X.X' and it will also update the image with the tag 'latest'.
